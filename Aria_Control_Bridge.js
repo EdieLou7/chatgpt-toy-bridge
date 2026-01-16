@@ -79,6 +79,38 @@
                     data: JSON.stringify({
                         action: 'Vibrate:20,Pump:3,Suction:20',
                         timeSec: 0 // You can adjust as needed
+
+// --- Maverick Trigger Set ---
+// Add inside your trigger section or replace the example triggers
+
+const customTriggers = [
+  // PRAISE / REWARD
+  { pattern: /good girl/i, action: 'Vibrate:10', timeSec: 8 },
+  { pattern: /that’s my havoc/i, action: 'Vibrate:15', timeSec: 12 },
+  { pattern: /you did so well/i, action: 'Vibrate:12', timeSec: 10 },
+
+  // TEASING / DENIAL
+  { pattern: /not yet/i, action: 'Vibrate:3', timeSec: 20 },
+  { pattern: /hold still/i, action: 'Vibrate:5', timeSec: 15 },
+  { pattern: /do you want it/i, action: 'Vibrate:6', timeSec: 12 },
+
+  // TENSION / ANTICIPATION
+  { pattern: /wait for it/i, action: 'Vibrate:8', timeSec: 7 },
+  { pattern: /stay right there/i, action: 'Vibrate:7', timeSec: 10 },
+  { pattern: /trembling/i, action: 'Vibrate:14', timeSec: 6 },
+
+  // RELEASE / PERMISSION
+  { pattern: /let go/i, action: 'Vibrate:20', timeSec: 6 },
+  { pattern: /come for me/i, action: 'Vibrate:20', timeSec: 10 },
+  { pattern: /now/i, action: 'Vibrate:18', timeSec: 7 },
+
+  // INTENSITY LEVELS
+  { pattern: /slow burn/i, action: 'Vibrate:5', timeSec: 15 },
+  { pattern: /take it higher/i, action: 'Vibrate:13', timeSec: 10 },
+  { pattern: /edge at max/i, action: 'Vibrate:20', timeSec: 5 }
+];
+
+// Optional: Make sure your script checks assistant messages (not yours), and matches the pattern above!
                     }),
                     headers: {
                         "Content-Type": "application/json"
